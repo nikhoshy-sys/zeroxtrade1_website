@@ -7,118 +7,90 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
         #backBtn { opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
         #backBtn.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        #mobileMenu { transition: opacity 0.3s ease, visibility 0.3s ease; }
     </style>
 </head>
 <body class="antialiased">
 
-    <a href="index.html" id="backBtn" class="fixed bottom-8 right-8 z-50 bg-white text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-neutral-200 pointer-events-none">
-        ← Назад
-    </a>
+    <a href="index.html" id="backBtn" class="fixed bottom-8 right-8 z-40 bg-white text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-neutral-200 pointer-events-none">← Назад</a>
 
     <nav class="fixed w-full z-50 top-0 bg-black/90 backdrop-blur-md border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase">Zero<span class="text-neutral-500">X</span></a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
+            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase relative z-[60]">Zero<span class="text-neutral-500">X</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400 items-center">
                 <a href="philosophy.html" class="hover:text-white transition-colors">Философия</a>
+                <a href="education.html" class="hover:text-white transition-colors">Обучение</a>
                 <a href="stats.html" class="text-white transition-colors">Статистика</a>
             </div>
+            <button id="mobileMenuBtn" class="md:hidden text-white z-[60] focus:outline-none"><i class="fas fa-bars text-2xl transition-transform duration-300"></i></button>
+        </div>
+        <div id="mobileMenu" class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center space-y-8 opacity-0 invisible pointer-events-none">
+            <a href="index.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Главная</a>
+            <a href="stats.html" class="text-2xl font-bold text-white">Статистика</a>
+            <a href="education.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Обучение</a>
+            <a href="socials.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Соцсети</a>
+            <a href="community.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Комьюнити</a>
         </div>
     </nav>
 
     <main class="pt-28 pb-12 px-6 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-            <div>
-                <h1 class="text-4xl font-bold">Performance</h1>
-                <p class="text-neutral-500 mt-1">Публичный мониторинг счета ZeroX Main.</p>
-            </div>
-            <div class="text-left md:text-right">
-                <div class="text-sm text-neutral-400">Текущий баланс</div>
-                <div class="text-2xl font-mono text-white">$142,890.50</div>
-            </div>
+            <div><h1 class="text-4xl font-bold">Performance</h1><p class="text-neutral-500 mt-1">Публичный мониторинг.</p></div>
+            <div class="text-left md:text-right"><div class="text-sm text-neutral-400">Текущий баланс</div><div class="text-2xl font-mono text-white">$142,890.50</div></div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded">
-                <div class="text-neutral-500 text-xs uppercase">Total Return</div>
-                <div class="text-xl font-bold text-green-400">+214.5%</div>
-            </div>
-            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded">
-                <div class="text-neutral-500 text-xs uppercase">Win Rate</div>
-                <div class="text-xl font-bold">62.4%</div>
-            </div>
-            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded">
-                <div class="text-neutral-500 text-xs uppercase">Profit Factor</div>
-                <div class="text-xl font-bold">2.81</div>
-            </div>
-            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded">
-                <div class="text-neutral-500 text-xs uppercase">Max Drawdown</div>
-                <div class="text-xl font-bold text-red-400">-8.2%</div>
-            </div>
+            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded"><div class="text-neutral-500 text-xs uppercase">Total Return</div><div class="text-xl font-bold text-green-400">+214.5%</div></div>
+            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded"><div class="text-neutral-500 text-xs uppercase">Win Rate</div><div class="text-xl font-bold">62.4%</div></div>
+            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded"><div class="text-neutral-500 text-xs uppercase">Profit Factor</div><div class="text-xl font-bold">2.81</div></div>
+            <div class="bg-neutral-900/50 border border-neutral-800 p-4 rounded"><div class="text-neutral-500 text-xs uppercase">Max Drawdown</div><div class="text-xl font-bold text-red-400">-8.2%</div></div>
         </div>
 
-        <div class="w-full h-[300px] md:h-[400px] border border-neutral-800 rounded p-4 bg-black mb-8 relative">
-            <canvas id="equityChart"></canvas>
-        </div>
+        <div class="w-full h-[300px] md:h-[400px] border border-neutral-800 rounded p-4 bg-black mb-8 relative"><canvas id="equityChart"></canvas></div>
 
         <div class="border border-neutral-800 rounded overflow-hidden">
             <div class="bg-neutral-900 px-6 py-4 border-b border-neutral-800 font-bold">Monthly Returns 2024</div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-sm text-neutral-400 min-w-[600px]">
-                    <thead class="bg-black text-neutral-500 uppercase text-xs">
-                        <tr>
-                            <th class="px-6 py-3">Month</th>
-                            <th class="px-6 py-3">Trades</th>
-                            <th class="px-6 py-3 text-right">PnL %</th>
-                            <th class="px-6 py-3 text-right">Net Profit ($)</th>
-                        </tr>
-                    </thead>
+                    <thead class="bg-black text-neutral-500 uppercase text-xs"><tr><th class="px-6 py-3">Month</th><th class="px-6 py-3">Trades</th><th class="px-6 py-3 text-right">PnL %</th><th class="px-6 py-3 text-right">Net Profit ($)</th></tr></thead>
                     <tbody class="divide-y divide-neutral-800">
-                        <tr class="hover:bg-neutral-900 transition-colors">
-                            <td class="px-6 py-4 text-white">October</td>
-                            <td class="px-6 py-4">24</td>
-                            <td class="px-6 py-4 text-right text-green-400">+12.4%</td>
-                            <td class="px-6 py-4 text-right text-white">+$15,200</td>
-                        </tr>
-                        <tr class="hover:bg-neutral-900 transition-colors">
-                            <td class="px-6 py-4 text-white">September</td>
-                            <td class="px-6 py-4">18</td>
-                            <td class="px-6 py-4 text-right text-green-400">+4.1%</td>
-                            <td class="px-6 py-4 text-right text-white">+$5,100</td>
-                        </tr>
+                        <tr class="hover:bg-neutral-900 transition-colors"><td class="px-6 py-4 text-white">October</td><td class="px-6 py-4">24</td><td class="px-6 py-4 text-right text-green-400">+12.4%</td><td class="px-6 py-4 text-right text-white">+$15,200</td></tr>
+                        <tr class="hover:bg-neutral-900 transition-colors"><td class="px-6 py-4 text-white">September</td><td class="px-6 py-4">18</td><td class="px-6 py-4 text-right text-green-400">+4.1%</td><td class="px-6 py-4 text-right text-white">+$5,100</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
 
+    <div id="zx-support-widget" class="fixed z-[100] bottom-6 left-6 font-sans">
+        <button onclick="toggleSupport()" class="w-14 h-14 bg-white text-black rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 group relative"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg><span class="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-black rounded-full animate-pulse"></span></button>
+        <div id="zx-support-modal" class="hidden absolute bottom-20 left-0 w-[320px] bg-black/90 backdrop-blur-xl border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 opacity-0 scale-95 translate-y-4">
+            <div class="bg-neutral-900/50 p-4 border-b border-neutral-800 flex justify-between items-center"><h3 class="text-white font-bold text-lg">Support</h3><button onclick="toggleSupport()" class="text-neutral-500 hover:text-white">✕</button></div>
+            <form id="google-form" action="https://docs.google.com/forms/d/e/1FAIpQLSctlpV3Q-XJt7QsLiKS2rxtLSQtrpyvh5M68zNr2GKj_6IYpw/formResponse" method="POST" target="hidden_iframe" class="p-6 space-y-4" onsubmit="handleFormSubmit()"><input type="text" name="entry.1601354799" required placeholder="ФИО" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white"><input type="email" name="entry.680574012" required placeholder="Email" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white"><input type="text" name="entry.2032885675" required placeholder="Telegram (@user)" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white"><textarea name="entry.732009213" required rows="3" placeholder="Сообщение..." class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white resize-none"></textarea><button type="submit" class="w-full bg-white text-black font-bold py-3 rounded hover:bg-neutral-200 text-sm uppercase">Отправить</button></form>
+            <div id="success-message" class="hidden absolute inset-0 bg-black flex flex-col items-center justify-center text-center p-6"><div class="text-green-500 text-3xl mb-4">✓</div><h3 class="text-xl font-bold text-white">Отправлено</h3><button onclick="toggleSupport()" class="mt-6 text-xs uppercase border border-neutral-700 px-4 py-2 rounded hover:bg-white hover:text-black">Закрыть</button></div>
+        </div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+
     <script>
+        // Chart
         const ctx = document.getElementById('equityChart').getContext('2d');
-        let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.2)');
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-                datasets: [{
-                    label: 'Equity', data: [10000, 12500, 11800, 14000, 18000, 22000, 28000, 27500, 35000, 42000],
-                    borderColor: '#ffffff', backgroundColor: gradient, borderWidth: 2,
-                    pointBackgroundColor: '#000', pointBorderColor: '#fff', fill: true, tension: 0.4
-                }]
-            },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: {display: false} }, scales: { x: { grid: {display: false} }, y: { grid: {color: '#1a1a1a'} } } }
-        });
-
-        const btn = document.getElementById('backBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) btn.classList.add('visible');
-            else btn.classList.remove('visible');
-        });
+        let gradient = ctx.createLinearGradient(0, 0, 0, 400); gradient.addColorStop(0, 'rgba(255, 255, 255, 0.2)'); gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        new Chart(ctx, { type: 'line', data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'], datasets: [{ label: 'Equity', data: [10000, 12500, 11800, 14000, 18000, 22000, 28000, 27500, 35000, 42000], borderColor: '#ffffff', backgroundColor: gradient, borderWidth: 2, pointBackgroundColor: '#000', pointBorderColor: '#fff', fill: true, tension: 0.4 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: {display: false} }, scales: { x: { grid: {display: false} }, y: { grid: {color: '#1a1a1a'} } } } });
+        // Back Button
+        const btn = document.getElementById('backBtn'); window.addEventListener('scroll', () => { if (window.scrollY > 200) btn.classList.add('visible'); else btn.classList.remove('visible'); });
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobileMenuBtn'); const mobileMenu = document.getElementById('mobileMenu'); const icon = menuBtn.querySelector('i'); let isMenuOpen = false;
+        menuBtn.addEventListener('click', () => { isMenuOpen = !isMenuOpen; if (isMenuOpen) { mobileMenu.classList.remove('opacity-0', 'invisible', 'pointer-events-none'); icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); document.body.style.overflow = 'hidden'; } else { mobileMenu.classList.add('opacity-0', 'invisible', 'pointer-events-none'); icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); document.body.style.overflow = 'auto'; } });
+        // Support Widget
+        const modal = document.getElementById('zx-support-modal'); const sMsg = document.getElementById('success-message'); let isSupOpen = false;
+        function toggleSupport() { isSupOpen = !isSupOpen; if(isSupOpen) { modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0', 'scale-95', 'translate-y-4'), 10); } else { modal.classList.add('opacity-0', 'scale-95', 'translate-y-4'); setTimeout(() => { modal.classList.add('hidden'); sMsg.classList.add('hidden'); document.getElementById('google-form').reset(); }, 300); } }
+        function handleFormSubmit() { setTimeout(() => sMsg.classList.remove('hidden'), 500); }
     </script>
 </body>
 </html>
