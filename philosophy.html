@@ -6,83 +6,58 @@
     <title>ZeroX | Философия</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
-        /* Кнопка Назад */
         #backBtn { opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
         #backBtn.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-        /* Фото */
         .photo-block { filter: grayscale(100%) contrast(110%); transition: opacity 1s; }
+        #mobileMenu { transition: opacity 0.3s ease, visibility 0.3s ease; }
     </style>
 </head>
 <body class="antialiased">
 
-    <a href="index.html" id="backBtn" class="fixed bottom-8 right-8 z-50 bg-white text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-neutral-200 pointer-events-none">
-        ← Назад
-    </a>
+    <a href="index.html" id="backBtn" class="fixed bottom-8 right-8 z-40 bg-white text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-neutral-200 pointer-events-none">← Назад</a>
 
     <nav class="fixed w-full z-50 top-0 bg-black/90 backdrop-blur-md border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase">Zero<span class="text-neutral-500">X</span></a>
+            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase relative z-[60]">Zero<span class="text-neutral-500">X</span></a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
                 <a href="philosophy.html" class="text-white">Философия</a>
                 <a href="stats.html" class="hover:text-white transition-colors">Статистика</a>
+                <a href="education.html" class="hover:text-white transition-colors">Обучение</a>
             </div>
+            <button id="mobileMenuBtn" class="md:hidden text-white z-[60] focus:outline-none"><i class="fas fa-bars text-2xl transition-transform duration-300"></i></button>
+        </div>
+        <div id="mobileMenu" class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center space-y-8 opacity-0 invisible pointer-events-none">
+            <a href="index.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Главная</a>
+            <a href="philosophy.html" class="text-2xl font-bold text-white">Философия</a>
+            <a href="education.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Обучение</a>
+            <a href="stats.html" class="text-2xl font-bold text-neutral-400 hover:text-white">Статистика</a>
         </div>
     </nav>
 
     <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto">
-        <header class="mb-12">
-            <p class="text-neutral-500 uppercase tracking-widest text-xs mb-4">Manifesto</p>
-            <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-8">ХАОС ИМЕЕТ<br>СТРУКТУРУ.</h1>
-            <div class="h-px w-24 bg-white"></div>
-        </header>
-
-        <div class="mb-16 w-full h-64 md:h-96 overflow-hidden rounded bg-neutral-900">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover photo-block opacity-80" alt="Structure">
-        </div>
-
+        <header class="mb-12"><p class="text-neutral-500 uppercase tracking-widest text-xs mb-4">Manifesto</p><h1 class="text-5xl md:text-7xl font-black tracking-tight mb-8">ХАОС ИМЕЕТ<br>СТРУКТУРУ.</h1><div class="h-px w-24 bg-white"></div></header>
+        <div class="mb-16 w-full h-64 md:h-96 overflow-hidden rounded bg-neutral-900"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover photo-block opacity-80" alt="Structure"></div>
         <div class="space-y-24 text-lg leading-relaxed text-neutral-300">
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-2xl font-bold text-white mb-4">01. Отказ от прогнозов</h2>
-                    <p>Большинство теряет деньги, пытаясь предсказать будущее. Мы не знаем, куда пойдет цена через минуту. Мы торгуем вероятность.</p>
-                </div>
-                <div class="border-l border-neutral-800 pl-6 italic text-neutral-500 flex items-center">
-                    "Рынок — это механизм передачи денег от нетерпеливых к терпеливым."
-                </div>
-            </section>
-            
-            <div class="w-full h-64 overflow-hidden rounded bg-neutral-900">
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover photo-block opacity-60" alt="Abstraction">
-            </div>
-
-            <section>
-                <h2 class="text-2xl font-bold text-white mb-6">02. Три аксиомы ZeroX</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-neutral-900 p-6 rounded border border-neutral-800">
-                        <div class="text-3xl font-black text-white mb-2">Risk</div>
-                        <p class="text-sm">Никогда не рискуй более 1% депозита.</p>
-                    </div>
-                    <div class="bg-neutral-900 p-6 rounded border border-neutral-800">
-                        <div class="text-3xl font-black text-white mb-2">Data</div>
-                        <p class="text-sm">Интуиция — враг. Только статистика.</p>
-                    </div>
-                    <div class="bg-neutral-900 p-6 rounded border border-neutral-800">
-                        <div class="text-3xl font-black text-white mb-2">Zen</div>
-                        <p class="text-sm">Эмоции стоят денег. Будь холоден.</p>
-                    </div>
-                </div>
-            </section>
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-12"><div><h2 class="text-2xl font-bold text-white mb-4">01. Отказ от прогнозов</h2><p>Большинство теряет деньги, пытаясь предсказать будущее. Мы не знаем, куда пойдет цена через минуту. Мы торгуем вероятность.</p></div><div class="border-l border-neutral-800 pl-6 italic text-neutral-500 flex items-center">"Рынок — это механизм передачи денег от нетерпеливых к терпеливым."</div></section>
+            <div class="w-full h-64 overflow-hidden rounded bg-neutral-900"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover photo-block opacity-60" alt="Abstraction"></div>
+            <section><h2 class="text-2xl font-bold text-white mb-6">02. Три аксиомы ZeroX</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-neutral-900 p-6 rounded border border-neutral-800"><div class="text-3xl font-black text-white mb-2">Risk</div><p class="text-sm">Никогда не рискуй более 1% депозита.</p></div><div class="bg-neutral-900 p-6 rounded border border-neutral-800"><div class="text-3xl font-black text-white mb-2">Data</div><p class="text-sm">Интуиция — враг. Только статистика.</p></div><div class="bg-neutral-900 p-6 rounded border border-neutral-800"><div class="text-3xl font-black text-white mb-2">Zen</div><p class="text-sm">Эмоции стоят денег. Будь холоден.</p></div></div></section>
         </div>
     </main>
 
+    <div id="zx-support-widget" class="fixed z-[100] bottom-6 left-6 font-sans"><button onclick="toggleSupport()" class="w-14 h-14 bg-white text-black rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 group relative"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg><span class="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-black rounded-full animate-pulse"></span></button><div id="zx-support-modal" class="hidden absolute bottom-20 left-0 w-[320px] bg-black/90 backdrop-blur-xl border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 opacity-0 scale-95 translate-y-4"><div class="bg-neutral-900/50 p-4 border-b border-neutral-800 flex justify-between items-center"><h3 class="text-white font-bold text-lg">Support</h3><button onclick="toggleSupport()" class="text-neutral-500 hover:text-white">✕</button></div><form id="google-form" action="https://docs.google.com/forms/d/e/1FAIpQLSctlpV3Q-XJt7QsLiKS2rxtLSQtrpyvh5M68zNr2GKj_6IYpw/formResponse" method="POST" target="hidden_iframe" class="p-6 space-y-4" onsubmit="handleFormSubmit()"><input type="text" name="entry.1601354799" required placeholder="ФИО" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white"><input type="email" name="entry.680574012" required placeholder="Email" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white"><input type="text" name="entry.2032885675" required placeholder="Telegram (@user)" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white"><textarea name="entry.732009213" required rows="3" placeholder="Сообщение..." class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white resize-none"></textarea><button type="submit" class="w-full bg-white text-black font-bold py-3 rounded hover:bg-neutral-200 text-sm uppercase">Отправить</button></form><div id="success-message" class="hidden absolute inset-0 bg-black flex flex-col items-center justify-center text-center p-6"><div class="text-green-500 text-3xl mb-4">✓</div><h3 class="text-xl font-bold text-white">Отправлено</h3><button onclick="toggleSupport()" class="mt-6 text-xs uppercase border border-neutral-700 px-4 py-2 rounded hover:bg-white hover:text-black">Закрыть</button></div></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></div>
+
     <script>
-        const btn = document.getElementById('backBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) btn.classList.add('visible');
-            else btn.classList.remove('visible');
-        });
+        const btn = document.getElementById('backBtn'); window.addEventListener('scroll', () => { if (window.scrollY > 200) btn.classList.add('visible'); else btn.classList.remove('visible'); });
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobileMenuBtn'); const mobileMenu = document.getElementById('mobileMenu'); const icon = menuBtn.querySelector('i'); let isMenuOpen = false;
+        menuBtn.addEventListener('click', () => { isMenuOpen = !isMenuOpen; if (isMenuOpen) { mobileMenu.classList.remove('opacity-0', 'invisible', 'pointer-events-none'); icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); document.body.style.overflow = 'hidden'; } else { mobileMenu.classList.add('opacity-0', 'invisible', 'pointer-events-none'); icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); document.body.style.overflow = 'auto'; } });
+        // Support
+        const modal = document.getElementById('zx-support-modal'); const sMsg = document.getElementById('success-message'); let isSupOpen = false;
+        function toggleSupport() { isSupOpen = !isSupOpen; if(isSupOpen) { modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0', 'scale-95', 'translate-y-4'), 10); } else { modal.classList.add('opacity-0', 'scale-95', 'translate-y-4'); setTimeout(() => { modal.classList.add('hidden'); sMsg.classList.add('hidden'); document.getElementById('google-form').reset(); }, 300); } }
+        function handleFormSubmit() { setTimeout(() => sMsg.classList.remove('hidden'), 500); }
     </script>
 </body>
 </html>
