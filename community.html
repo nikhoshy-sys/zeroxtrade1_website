@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroX | Комьюнити</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="fixed w-full z-50 top-0 bg-black/90 backdrop-blur-md border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase">Zero<span class="text-neutral-500">X</span></a>
+            <div class="flex space-x-8 text-sm font-medium text-neutral-400">
+                <a href="index.html" class="hover:text-white transition-colors">← На Главную</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">Private Club</h1>
+            <p class="text-neutral-400 max-w-xl mx-auto">Окружение определяет результат. Выберите свой уровень доступа.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            
+            <div class="p-8 rounded-2xl border border-neutral-800 bg-neutral-900/20">
+                <h2 class="text-2xl font-bold mb-2">Started</h2>
+                <div class="text-4xl font-bold mb-6">0$</div>
+                <ul class="space-y-4 text-sm text-neutral-300 mb-8">
+                    <li class="flex items-center"><span class="mr-2 text-neutral-500">✓</span> Еженедельный дайджест</li>
+                    <li class="flex items-center"><span class="mr-2 text-neutral-500">✓</span> Доступ к статьям</li>
+                    <li class="flex items-center"><span class="mr-2 text-neutral-500">✓</span> Публичный чат</li>
+                </ul>
+                <a href="#" class="block w-full py-3 text-center border border-neutral-700 rounded hover:bg-white hover:text-black transition-all">Подписаться</a>
+            </div>
+
+            <div class="p-8 rounded-2xl border border-white bg-white text-black relative transform md:-translate-y-4 shadow-2xl shadow-white/10">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Best Value</div>
+                <h2 class="text-2xl font-bold mb-2">Developed</h2>
+                <div class="flex items-end gap-2 mb-6">
+                    <span class="text-5xl font-black">$29</span>
+                    <span class="text-xl text-neutral-500 line-through mb-1">$49</span>
+                    <span class="text-sm text-neutral-500 mb-1">/ мес</span>
+                </div>
+                <ul class="space-y-4 text-sm text-neutral-800 font-medium mb-8">
+                    <li class="flex items-center"><span class="mr-2">✓</span> Ежедневные сетапы (Spot & Futures)</li>
+                    <li class="flex items-center"><span class="mr-2">✓</span> Ончейн-метрики</li>
+                    <li class="flex items-center"><span class="mr-2">✓</span> Закрытый Discord</li>
+                </ul>
+                <a href="#" class="block w-full py-3 text-center bg-black text-white rounded hover:bg-neutral-800 transition-all font-bold">Вступить в клуб</a>
+            </div>
+
+            <div class="p-8 rounded-2xl border border-neutral-800 bg-neutral-900/20">
+                <h2 class="text-2xl font-bold mb-2">Advanced</h2>
+                <div class="flex items-end gap-2 mb-6">
+                    <span class="text-4xl font-bold">$99</span>
+                    <span class="text-lg text-neutral-500 line-through mb-1">$149</span>
+                </div>
+                <ul class="space-y-4 text-sm text-neutral-300 mb-8">
+                    <li class="flex items-center"><span class="mr-2 text-white">✓</span> Всё из тарифа Developed</li>
+                    <li class="flex items-center"><span class="mr-2 text-white">✓</span> Личное менторство</li>
+                    <li class="flex items-center"><span class="mr-2 text-white">✓</span> Разбор ваших сделок</li>
+                </ul>
+                <a href="#" class="block w-full py-3 text-center border border-neutral-700 rounded hover:bg-white hover:text-black transition-all">Подать заявку</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

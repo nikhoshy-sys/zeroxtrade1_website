@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroX | Философия</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+        /* Кнопка Назад */
+        #backBtn { opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
+        #backBtn.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        /* Фото */
+        .photo-block { filter: grayscale(100%) contrast(110%); transition: opacity 1s; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <a href="index.html" id="backBtn" class="fixed bottom-8 right-8 z-50 bg-white text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-neutral-200 pointer-events-none">
+        ← Назад
+    </a>
+
+    <nav class="fixed w-full z-50 top-0 bg-black/90 backdrop-blur-md border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold tracking-tighter uppercase">Zero<span class="text-neutral-500">X</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-neutral-400">
+                <a href="philosophy.html" class="text-white">Философия</a>
+                <a href="stats.html" class="hover:text-white transition-colors">Статистика</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto">
+        <header class="mb-12">
+            <p class="text-neutral-500 uppercase tracking-widest text-xs mb-4">Manifesto</p>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-8">ХАОС ИМЕЕТ<br>СТРУКТУРУ.</h1>
+            <div class="h-px w-24 bg-white"></div>
+        </header>
+
+        <div class="mb-16 w-full h-64 md:h-96 overflow-hidden rounded bg-neutral-900">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover photo-block opacity-80" alt="Structure">
+        </div>
+
+        <div class="space-y-24 text-lg leading-relaxed text-neutral-300">
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">01. Отказ от прогнозов</h2>
+                    <p>Большинство теряет деньги, пытаясь предсказать будущее. Мы не знаем, куда пойдет цена через минуту. Мы торгуем вероятность.</p>
+                </div>
+                <div class="border-l border-neutral-800 pl-6 italic text-neutral-500 flex items-center">
+                    "Рынок — это механизм передачи денег от нетерпеливых к терпеливым."
+                </div>
+            </section>
+            
+            <div class="w-full h-64 overflow-hidden rounded bg-neutral-900">
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover photo-block opacity-60" alt="Abstraction">
+            </div>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-6">02. Три аксиомы ZeroX</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-neutral-900 p-6 rounded border border-neutral-800">
+                        <div class="text-3xl font-black text-white mb-2">Risk</div>
+                        <p class="text-sm">Никогда не рискуй более 1% депозита.</p>
+                    </div>
+                    <div class="bg-neutral-900 p-6 rounded border border-neutral-800">
+                        <div class="text-3xl font-black text-white mb-2">Data</div>
+                        <p class="text-sm">Интуиция — враг. Только статистика.</p>
+                    </div>
+                    <div class="bg-neutral-900 p-6 rounded border border-neutral-800">
+                        <div class="text-3xl font-black text-white mb-2">Zen</div>
+                        <p class="text-sm">Эмоции стоят денег. Будь холоден.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const btn = document.getElementById('backBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        });
+    </script>
+</body>
+</html>

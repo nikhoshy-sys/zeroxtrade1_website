@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroX | Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+        #backBtn { opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
+        #backBtn.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .article-img { filter: grayscale(100%); transition: all 0.5s; }
+        .article-card:hover .article-img { filter: grayscale(0%); }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="index.html" id="backBtn" class="fixed bottom-8 right-8 z-50 bg-white text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-neutral-200 pointer-events-none">← На главную</a>
+    <nav class="fixed w-full z-50 top-0 bg-black/90 backdrop-blur-md border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"><a href="index.html" class="text-xl font-bold tracking-tighter uppercase">Zero<span class="text-neutral-500">X</span></a><div class="text-sm font-medium text-neutral-400">Academy</div></div>
+    </nav>
+    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-20"><div class="inline-block px-3 py-1 border border-neutral-800 rounded-full text-xs text-neutral-500 uppercase tracking-widest mb-4">Free Education</div><h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">ACADEMY</h1><p class="text-neutral-400 max-w-2xl mx-auto">База знаний ZeroX.</p></div>
+        
+        <div class="article-card mb-24 border-b border-neutral-900 pb-12"><div class="flex flex-col md:flex-row gap-12 items-start"><div class="w-full md:w-1/2"><div class="text-neutral-500 font-mono text-sm mb-2">MODULE 01</div><h2 class="text-3xl font-bold mb-4">Психология FOMO</h2><p class="text-neutral-400 leading-relaxed mb-6">Почему вы закрываете сделки рано? Биохимия мозга трейдера.</p><button class="text-white border-b border-white pb-1 text-sm hover:text-neutral-400 transition-colors">Читать статью →</button></div><div class="w-full md:w-1/2"><div class="relative border border-neutral-800 rounded-lg overflow-hidden group cursor-pointer bg-neutral-900"><img src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?q=80&w=1000&auto=format&fit=crop" class="w-full h-64 object-cover article-img opacity-60"><div class="absolute inset-0 flex items-center justify-center"><div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20">▶</div></div></div></div></div></div>
+        <div class="article-card mb-24 border-b border-neutral-900 pb-12"><div class="flex flex-col md:flex-row-reverse gap-12 items-start"><div class="w-full md:w-1/2"><div class="text-neutral-500 font-mono text-sm mb-2">MODULE 02</div><h2 class="text-3xl font-bold mb-4">Риск-менеджмент</h2><p class="text-neutral-400 leading-relaxed mb-6">Математика выживания. Формула Келли и R:R.</p><button class="text-white border-b border-white pb-1 text-sm hover:text-neutral-400 transition-colors">Читать статью →</button></div><div class="w-full md:w-1/2"><div class="relative border border-neutral-800 rounded-lg overflow-hidden group cursor-pointer bg-neutral-900"><img src="https://images.unsplash.com/photo-1611974765215-0c7974e45558?q=80&w=1000&auto=format&fit=crop" class="w-full h-64 object-cover article-img opacity-60"><div class="absolute inset-0 flex items-center justify-center"><div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/20">▶</div></div></div></div></div></div>
+    </main>
+    <script>const btn = document.getElementById('backBtn'); window.addEventListener('scroll', () => { if (window.scrollY > 200) btn.classList.add('visible'); else btn.classList.remove('visible'); });</script>
+
+    <div id="zx-support-widget" class="fixed z-[100] bottom-6 left-6 font-sans">
+        <button onclick="toggleSupport()" class="w-14 h-14 bg-white text-black rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 group relative"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg><span class="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-black rounded-full animate-pulse"></span></button>
+        <div id="zx-support-modal" class="hidden absolute bottom-20 left-0 w-[320px] bg-black/90 backdrop-blur-xl border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 opacity-0 scale-95 translate-y-4">
+            <div class="bg-neutral-900/50 p-4 border-b border-neutral-800 flex justify-between items-center"><h3 class="text-white font-bold text-lg">Support</h3><button onclick="toggleSupport()" class="text-neutral-500 hover:text-white">✕</button></div>
+            <form id="google-form" action="https://docs.google.com/forms/d/e/1FAIpQLSctlpV3Q-XJt7QsLiKS2rxtLSQtrpyvh5M68zNr2GKj_6IYpw/formResponse" method="POST" target="hidden_iframe" class="p-6 space-y-4" onsubmit="handleFormSubmit()">
+                <input type="text" name="entry.1601354799" required placeholder="ФИО" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white">
+                <input type="email" name="entry.680574012" required placeholder="Email" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white">
+                <input type="text" name="entry.2032885675" required placeholder="Telegram" class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white">
+                <textarea name="entry.732009213" required rows="3" placeholder="Сообщение..." class="w-full bg-neutral-900 border border-neutral-700 rounded p-2 text-sm text-white outline-none focus:border-white resize-none"></textarea>
+                <button type="submit" class="w-full bg-white text-black font-bold py-3 rounded hover:bg-neutral-200 text-sm uppercase">Отправить</button>
+            </form>
+            <div id="success-message" class="hidden absolute inset-0 bg-black flex flex-col items-center justify-center text-center p-6"><div class="text-green-500 text-3xl mb-4">✓</div><h3 class="text-xl font-bold text-white">Отправлено</h3><button onclick="toggleSupport()" class="mt-6 text-xs uppercase border border-neutral-700 px-4 py-2 rounded hover:bg-white hover:text-black">Закрыть</button></div>
+        </div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+    <script>
+        const modal = document.getElementById('zx-support-modal'); const sMsg = document.getElementById('success-message'); let isOpen = false;
+        function toggleSupport() { isOpen = !isOpen; if(isOpen) { modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0', 'scale-95', 'translate-y-4'), 10); } else { modal.classList.add('opacity-0', 'scale-95', 'translate-y-4'); setTimeout(() => { modal.classList.add('hidden'); sMsg.classList.add('hidden'); document.getElementById('google-form').reset(); }, 300); } }
+        function handleFormSubmit() { setTimeout(() => sMsg.classList.remove('hidden'), 500); }
+    </script>
+</body>
+</html>
